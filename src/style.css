@@ -1,2 +1,13 @@
 /* style.css는 input index.css output */
-@import "tailwindcss";
+@import 'tailwindcss';
+/* theme을 각 테마별로 분리해서 만들기 */
+@import './common/theme.css';
+/* 수동으로 다크모드 적용하는 경우 */
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* @theme는 심이라고 읽음, 사용자가 원하는 테마 색상을 만들 수 있음*/
+/* @theme에 직접 선언하면 root보다 확장성이 좋아짐 root에서는 테일윈드 유틸리트 조합안됨*/
+/* --color은 네임스페이스라고 함,  */
+/* :root {
+  --color-likelion: oklch(0.72 0.11 178);
+} */

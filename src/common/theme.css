@@ -1,0 +1,39 @@
+/* 수동으로 다크모드 적용하는 경우 */
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* @theme는 심이라고 읽음, 사용자가 원하는 테마 색상을 만들 수 있음*/
+/* @theme에 직접 선언하면 root보다 확장성이 좋아짐 root에서는 테일윈드 유틸리트 조합안됨*/
+/* --color은 네임스페이스라고 함,  */
+/* :root {
+  --color-likelion: oklch(0.72 0.11 178);
+} */
+@theme {
+  /* 색상을 초기화 후 원하는 색상만 등록 */
+  /* --*: initial; 기본적인 유틸리티 초기화함 */
+  /* --color-*: initial; 추가하면 트윌윈드의 유틸리트의 컬러색깔은 다 초기화 해버리고 씸에 선언한 컬러만 사용함 */
+  --color-*: initial;
+  --color-likelion: oklch(0.72 0.11 178);
+
+  /* SUIT 글꼴 추가 */
+  --font-suit: 'SUIT Variable', sans-serif;
+  /* 중단점(sm)을 재 정의 */
+  /* --breakpoint 반응형 중단점 */
+  --breakpoint-sm: 30rem;
+
+  /* 유틸리티는 text-sm : 14px인데 13px로 재정의 */
+  --text-sm: 0.8125rem;
+
+  /* 애니메이션 유틸리티 */
+  --animate-fade-in-scale: fade-in-scale 0.3s ease-out infinite;
+
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
