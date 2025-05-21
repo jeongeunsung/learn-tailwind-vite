@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유틸리티 클래스</title>
+    <link rel="shortcut icon" href="/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/likelion.svg" type="image/svg" />
+    <link rel="preload" as="font" href="/font/suit/SUIT-Variable.woff2" />
+    <link rel="stylesheet" href="/font/suit/SUIT-Variable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a href="/index.html">메인 페이지 이동</a>
+    <br />
+    <h1>유틸리티 클래스</h1>
+    <div class="wrapper h-screen flex justify-center items-center">
+      <!-- 4px 기준 : 20px이면 4 * 5 하면 20 그럼 p-5로 넣음 됨-->
+      <!-- 유틸리티 클래스 실습 -->
+      <!-- w-1/2은 50%의미함 -->
+      <figure class="min-w-[300px] w-1/2 flex gap-5 border border-slate-300 rounded-sm p-5">
+        <img class="self-start w-16 rounded-full" src="../assets/images/character-01.jpg" alt="" />
+        <!-- space가 위쪽 아래쪽 마진 없애주고 중간에 마진이 들어갑 gap 같음  -->
+        <figcaption class="text-sm space-y-3">
+          <p class="font-bold">Erin Lindford</p>
+          <p class="text-gray-400">Product Engineer</p>
+          <button class="mt-5 px-2 text-purple-500 border border-current rounded-2xl" type="button">Message</button>
+        </figcaption>
+      </figure>
+    </div>
+  </body>
+</html>
