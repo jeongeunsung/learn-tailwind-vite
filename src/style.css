@@ -19,7 +19,7 @@
   --building: url(/src/assets/images/building.avif);
 }
 
-/* 재정의 하고 싶을때 layer에 넣어야지 재정의 됨 */
+/* 재정의 하기위해서는 layer에 넣어야지 재정의 됨 */
 @layer components {
   .bootcamp {
     background-color: pink;
@@ -27,4 +27,13 @@
     margin-block: 1em;
     border: 5px solid blue;
   }
+
+  .like {
+    @apply border-4 border-red-500 p-4 my-4 bg-violet-300;
+  }
+}
+
+/* @layer utilities로 해도 되고 @utility 해도됨 */
+@utility shape-circle {
+  shape-outside: circle(50%);
 }
