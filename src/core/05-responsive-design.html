@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 디자인</title>
+    <link rel="shortcut icon" href="/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon/likelion.svg" type="image/svg" />
+    <link rel="preload" as="font" href="/font/suit/SUIT-Variable.woff2" />
+    <link rel="stylesheet" href="/font/suit/SUIT-Variable.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="m-12 bg-amber-300 sm:max-lg:bg-violet-200">
+    <a href="/index.html">메인 페이지 이동</a>
+    <br />
+    <h1 class="text-3xl">반응형 디자인</h1>
+    <!-- 접두사 dark:. hover:, focus: 
+        중단점 접두사 sm, md, lg, xl. 2xl
+    -->
+    <figure class="flex flex-col items-center gap-6 w-1/2 text-center p-6 bg-white rounded-lg drop-shadow-lg md:flex-row md:w-100 md:text-left">
+      <img class="h-6 mt-4 md:h-9 md:mt-0" src="/vite.svg" alt="" />
+      <figcaption class="flex flex-col">
+        <h3 class="text-2xl text-cyan-500 font-semibold" lang="en">Tailwind <abbr class="no-underline cursor-help" title="Cascading Style Sheet">CSS</abbr></h3>
+        <p class="mt-2 text-sm text-gray-700">다양한 Tailwind CSS의 유틸리티 세트를 활용해 복잡한 컴포넌트를 구성할 수 있습니다.</p>
+        <a class="inline-block mt-2 mx-auto w-1/2 text-sm text-cyan-600 md:w-full" href="https://tailwindcss.com/docs/utility-first" rel="noopener noreferrer" target="_blank"> 유틸리티 퍼스트 펀더멘탈 </a>
+      </figcaption>
+    </figure>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries -->
+    <!-- 컨테이너 쿼리 -->
+    <!-- @sm/main:flex-col : 부모의 사이즈가 inline-size여야지 가능 -->
+    <!-- 바로 위 부모 컨테이너 크기에 반응하는 레이아웃 -->
+    <!-- width: 400px로 지정한 경우(w-100는 100 * 4 = 400) -->
+    <div class="@container w-100">
+      <div class="flex flex-col @md:flex-row">
+        <div>TailwindCSS</div>
+        <div>Container Query</div>
+      </div>
+    </div>
+
+    <!-- 자신의 조부모(lion)였던 컨테이너 크기에 반응하는 레이아웃, 이름이 없으면 자신의 부모를 향하는거고, 이름이 있으면 이름을 가진거에 크기에 반응  -->
+    <div class="@container/lion">
+      <!-- <div class="@container w-100"> lion을 기준으로 하고싶을 때 그 아래 div에도 꼭 @container를 안넣어도 됨 -->
+      <div>
+        <div class="flex flex-col @md/lion:flex-row">
+          <div>TailwindCSS</div>
+          <div>Container Query</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
