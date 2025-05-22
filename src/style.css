@@ -1,7 +1,7 @@
 /* style.css는 input index.css output */
 @import 'tailwindcss';
-/* theme을 각 테마별로 분리해서 만들기 */
-@import './common/theme.css';
+/* theme을 각 용도별로 분리해서 만들기 */
+/* @import './common/theme.css'; */
 /* 수동으로 다크모드 적용하는 경우 */
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
@@ -11,3 +11,20 @@
 /* :root {
   --color-likelion: oklch(0.72 0.11 178);
 } */
+
+@theme {
+  --color-like: red;
+  --color-lion: green;
+
+  --building: url(/src/assets/images/building.avif);
+}
+
+/* 재정의 하고 싶을때 layer에 넣어야지 재정의 됨 */
+@layer components {
+  .bootcamp {
+    background-color: pink;
+    padding: 1em;
+    margin-block: 1em;
+    border: 5px solid blue;
+  }
+}
