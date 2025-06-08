@@ -15,8 +15,15 @@
 @theme {
   --color-like: red;
   --color-lion: green;
+  --color-likelion-black: #303033;
+  --color-likelion-red: #b02c20;
+  --color-likelion-green: #58dc76;
+  --color-likelion-silver: #f5f5f5;
 
   --building: url(/src/assets/images/building.avif);
+  --pretendard: 'Pretendard Variable', Pretendard, sans-serif;
+
+  --autofit: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 /* 재정의 하기위해서는 layer에 넣어야지 재정의 됨 */
